@@ -23,4 +23,8 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/', (req, res)=> {
+    res.send("welcome to Glow Quick Backend Server...");
+})
+
 export default app;

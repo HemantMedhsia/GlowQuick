@@ -1,1 +1,2 @@
-export const DB_NAME = 'test';
+export const DB_NAME = 'GlowQuick';
+// the name of the database

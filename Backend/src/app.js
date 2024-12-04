@@ -27,4 +27,9 @@ app.get('/', (req, res)=> {
     res.send("welcome to Glow Quick Backend Server...");
 })
 
+app.get('/hemant', (req, res)=> {
+    res.send("welcome to Hemant Github Page... || https://github.com/hemantmedhsia");
+
+})
+
 export default app;

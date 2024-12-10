@@ -31,11 +31,11 @@ const barberSchema = mongoose.Schema({
         required: true
     },
     barberService: {
-        ref: 'BarberService',
+        ref: 'Service',
         type: mongoose.Schema.Types.ObjectId
     },
     todayCustomerAppointments: [{
-        ref: 'CustomerAppointment',
+        ref: 'Customer',
         type: mongoose.Schema.Types.ObjectId
     }],
     workHistory: [{
@@ -46,7 +46,7 @@ const barberSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    barberStatus: {
+    barberAvailableStatus: {
         type: String,
         enum: ['present', 'absent'],
     },

@@ -1,60 +1,90 @@
-import e from 'express';
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
+import bcrypt from "bcrypt";
 
 const barberSchema = mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
     },
     age: {
         type: Number,
-        required: true
+        required: true,
     },
     address: {
         type: String,
-        required: true
+        required: true,
     },
     phone: {
-        type: Number,
-        required: true
+        type: String,
+        required: true,
+        unique: true,
+        index: true,
     },
-    addhar: {
-        type: Number,
-        required: true
+    aadhar: {
+        type: String,
+        required: true,
     },
     password: {
         type: String,
-        required: true
+        required: true,
     },
     photo: {
         type: String,
-        required: true
+        default: "",
     },
     barberService: {
-        ref: 'BarberService',
-        type: mongoose.Schema.Types.ObjectId
+        ref: "BarberService",
+        type: mongoose.Schema.Types.ObjectId,
     },
-    todayCustomerAppointments: [{
-        ref: 'CustomerAppointment',
-        type: mongoose.Schema.Types.ObjectId
-    }],
-    workHistory: [{
-        ref: 'CustomerHistory',
-        type: mongoose.Schema.Types.ObjectId
-    }],
+    todayCustomerAppointments: [
+        {
+            ref: "CustomerAppointment",
+            type: mongoose.Schema.Types.ObjectId,
+        },
+    ],
+    workHistory: [
+        {
+            ref: "CustomerHistory",
+            type: mongoose.Schema.Types.ObjectId,
+        },
+    ],
     barberRating: {
         type: Number,
-        required: true
     },
     barberStatus: {
         type: String,
-        enum: ['present', 'absent'],
+        enum: ["present", "absent"],
     },
     salary: {
         type: Number,
-        required: true
-    }
-})
+        required: true,
+    },
+    refreshToken: {
+        type: String,
+        default: "",
+    },
+});
 
-const Barber = mongoose.model('Barber', barberSchema );
+barberSchema.pre("save", async function (next) {
+    try {
+        if (!this.isModified("password")) {
+            next();
+        }
+        const salt = await bcrypt.genSalt(10);
+        this.password = await bcrypt.hash(this.password, salt);
+        next();
+    } catch (error) {
+        next(error);
+    }
+});
+
+barberSchema.methods.isValidatePassword = async function (password) {
+    try {
+        return await bcrypt.compare(password, this.password);
+    } catch (error) {
+        throw new Error(error);
+    }
+};
+
+const Barber = mongoose.model("Barber", barberSchema);
 export default Barber;

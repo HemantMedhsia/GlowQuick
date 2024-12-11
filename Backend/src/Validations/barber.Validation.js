@@ -1,5 +1,4 @@
 import Joi from "joi";
-import mongoose from "mongoose";
 
 export const createBarberValidation = Joi.object({
     name: Joi.string().required(),

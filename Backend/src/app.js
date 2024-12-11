@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import { fileURLToPath } from "url";
 import path from "path";
 import { barberRoutes } from "./Routes/barber.Routes.js";
+import { serviceRoutes } from "./Routes/Service.Routes.js";
 dotenv.config({
     path: "./.env",
 });
@@ -37,6 +38,7 @@ app.get("/hemant", (req, res) => {
 });
 
 app.use("/api", barberRoutes);
+app.use("/api", serviceRoutes);
 
 // Global error handling middleware
 app.use((err, req, res, next) => {

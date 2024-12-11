@@ -12,7 +12,7 @@ const galleryItems = [
     id: 1,
     category: "Haircuts",
     image: haircut,
-    description: "Professional Haircuts for all styles.",
+    description: "Professional Haircuts for all styles. Professional Haircuts for all styles. Professional Haircuts for all styles. Professional Haircuts for all styles. Professional Haircuts for all styles. Professional Haircuts for all styles. Professional Haircuts for all styles. Professional Haircuts for all styles. Professional Haircuts for all styles.",
   },
   {
     id: 2,

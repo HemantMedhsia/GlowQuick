@@ -1,0 +1,83 @@
+.container-eg-btn-2 {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 0 auto 10px;
+    padding: .5em;
+    line-height: normal;
+}
+.container-eg-btn-2 .button {
+    background: #e7ffcb;
+    margin: 10px;
+    padding: 12px 15px;
+    border: 2px solid #1ea664;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative; 
+    overflow:hidden; 
+    transition: .3s;
+    z-index: 1;
+}
+.container-eg-btn-2 .button-8:before, .container-eg-btn-2 .button-8:after {
+    position: absolute;
+    top: 50%;
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #1ea664;
+    border-radius: 50%;
+    z-index: -1;
+}
+.container-eg-btn-2 .button-8:before {
+    left: -20px;
+    transform: translate(-50%, -50%);
+}
+.container-eg-btn-2 .button-8:after {
+    right: -20px;
+    transform: translate(50%, -50%);
+}
+.container-eg-btn-2 .button-8:hover:before {
+    -webkit-animation: circle-left 0.7s both;
+    animation: circle-left 0.7s both;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+@keyframes circle-left{
+  0% {
+    left: -20px;
+}
+
+50% {
+    left: 50%;
+    width: 20px;
+    height: 20px;
+}
+100% {
+    left: 50%;
+    width: 375px;
+    height: 375px;
+}
+}
+.container-eg-btn-2 .button-8:hover:after {
+    -webkit-animation: circle-right 0.7s both;
+    animation: circle-right 0.7s both;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+@keyframes circle-right{
+  0% {
+    right: -20px;
+}
+50% {
+    right: 50%;
+    width: 20px;
+    height: 20px;
+}
+100% {
+    right: 50%;
+    width: 375px;
+    height: 375px;
+}
+}

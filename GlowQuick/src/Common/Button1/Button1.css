@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900");
+
+:root {
+  --text-color: white;
+  --shadow-color: teal;
+  --btn-color: #00c2d1;
+  --bg-color: #141218;
+  --bubble-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.custom-button {
+  position: relative;
+  padding: 10px 20px;
+  border: none;
+  background: #00c2d1;
+  cursor: pointer;
+
+  font-family: "Source Code Pro";
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 24px;
+  color: var(--text-color);
+
+  background-color: var(--btn-color);
+  /* box-shadow: var(--shadow-color) 2px 2px 5px; */
+  border-radius: 4px;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.custom-button:focus {
+  outline-color: transparent;
+  
+}
+
+.right::after,
+.custom-button::after {
+  content: var(--content);
+  display: block;
+  position: absolute;
+  white-space: nowrap;
+  padding: 40px 40px;
+  pointer-events: none;
+}
+
+.custom-button::after {
+  font-weight: 200;
+  top: -30px;
+  left: -20px;
+}
+
+.right,
+.left {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.right {
+  left: 66%;
+}
+.left {
+  right: 66%;
+}
+.right::after {
+  top: -30px;
+  left: calc(-66% - 20px);
+
+  background-color: var(--bg-color);
+  color: transparent;
+  transition: transform 0.4s ease-out;
+  transform: translate(0, -90%) rotate(0deg);
+}
+
+.custom-button:hover .right::after {
+  transform: translate(0, -47%) rotate(0deg);
+}
+
+.custom-button .right:hover::after {
+  transform: translate(0, -50%) rotate(-7deg);
+}
+
+.custom-button .left:hover ~ .right::after {
+  transform: translate(0, -50%) rotate(7deg);
+}
+
+/* bubbles */
+.custom-button::before {
+  content: "";
+  pointer-events: none;
+  opacity: 0.6;
+  background: radial-gradient(
+      circle at 20% 35%,
+      transparent 0,
+      transparent 1px,
+      var(--bubble-color) 3px,
+      var(--bubble-color) 4px,
+      transparent 4px
+    ),
+    radial-gradient(
+      circle at 75% 44%,
+      transparent 0,
+      transparent 1px,
+      var(--bubble-color) 3px,
+      var(--bubble-color) 4px,
+      transparent 4px
+    ),
+    radial-gradient(
+      circle at 46% 52%,
+      transparent 0,
+      transparent 1px,
+      var(--bubble-color) 5px,
+      var(--bubble-color) 6px,
+      transparent 6px
+    ),
+    radial-gradient(
+      circle at 16% 42%,
+      transparent 0,
+      transparent 1px,
+      var(--bubble-color) 5px,
+      var(--bubble-color) 6px,
+      transparent 6px
+    ),
+    radial-gradient(
+      circle at 55% 34%,
+      transparent 0,
+      transparent 1px,
+      var(--bubble-color) 3px,
+      var(--bubble-color) 4px,
+      transparent 4px
+    );
+
+  width: 100%;
+  height: 300%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  animation: bubbles 2s linear infinite both;
+}
+
+@keyframes bubbles {
+  from {
+    transform: translate();
+  }
+  to {
+    transform: translate(0, -66.666%);
+  }
+}

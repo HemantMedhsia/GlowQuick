@@ -33,12 +33,12 @@ const barberSchema = mongoose.Schema({
         default: "",
     },
     barberService: {
-        ref: "BarberService",
+        ref: "Service",
         type: mongoose.Schema.Types.ObjectId,
     },
     todayCustomerAppointments: [
         {
-            ref: "CustomerAppointment",
+            ref: "Customer",
             type: mongoose.Schema.Types.ObjectId,
         },
     ],
@@ -51,7 +51,7 @@ const barberSchema = mongoose.Schema({
     barberRating: {
         type: Number,
     },
-    barberStatus: {
+    barberAvailableStatus: {
         type: String,
         enum: ["present", "absent"],
     },

@@ -42,7 +42,7 @@ const Testimonials = () => {
             className="absolute left-4 bg-gray-800 text-white px-4 py-2 rounded-full z-10"
             onClick={handlePrev}
           >
-            Prev
+            P
           </button>
 
           {/* Testimonials Slider */}

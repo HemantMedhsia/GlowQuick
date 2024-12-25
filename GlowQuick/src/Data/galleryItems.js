@@ -2,7 +2,6 @@ import shaving1 from "../assets/serviceImage/shaving1.jpg";
 import shaving2 from "../assets/serviceImage/shaving3.jpg";
 import haircut from "../assets/serviceImage/Haircut.jpg";
 import hairclouring from "../assets/serviceImage/Haircolouring.jpg";
-import facial1 from "../assets/serviceImage/Facial1.jpg";
 import facial2 from "../assets/serviceImage/Facial2.jpg";
 import styling1 from "../assets/serviceImage/Styling.jpg";
 import styling2 from "../assets/serviceImage/Styling2.jpg";

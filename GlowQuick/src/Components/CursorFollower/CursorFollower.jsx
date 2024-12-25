@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import GlowquickCursur from "../assets/Images/glowQuickCursur.gif";
+import GlowquickCursur from "../../assets/Images/glowQuickCursur.gif";
 
 const CursorFollower = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });

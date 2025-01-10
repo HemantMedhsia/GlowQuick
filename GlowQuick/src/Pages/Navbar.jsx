@@ -2,8 +2,10 @@ import React from "react";
 import logo from "../assets/Images/glowQuickLogo.png";
 import Button1 from "../Common/Button1/Button1";
 import Button from "../Common/Button4/Button";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <nav className="fixed top-0 left-0 w-full flex items-center justify-between z-50">
       {/* Logo Section */}
@@ -20,6 +22,7 @@ const Navbar = () => {
             bgColor="#285F74"
             textColor="text-white"
             className="text-xl border border-[#285F74]"
+            onClick={()=>navigate("/login")}
           />
         </div>
       </div>

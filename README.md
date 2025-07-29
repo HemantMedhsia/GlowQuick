@@ -93,14 +93,6 @@ We welcome contributions to Glow Quick! If you'd like to contribute, please:
 .  Create a new branch for your feature or bug fix
 .  Submit a pull request with a detailed description of your changes
 
-## License
-
-Glow Quick is licensed under the [MIT License](https://opensource.org/licenses/MIT).
-
-## Acknowledgments
-
-*   Special thanks to [janwilmake](https://github.com/janwilmake) for providing the rules and guidelines for this project.
-
 ## Contact
 
 For more information or to get in touch with us, please visit:
@@ -131,8 +123,3 @@ When outputting files, always put them inside of fenced code blocks with  backti
 console.log("hello,world!");
 // A comment with backticks preventing from using  or  backticks: ````
 `````
-
-Use tildes (`~~~~~`) instead of backticks for fenced code blocks when dealing with backtick-heavy content.
-
-When the user requests binary files you can insert them by passing a URL as content of a named codeblock (NB: one url per file!)
-```
